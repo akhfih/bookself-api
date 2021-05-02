@@ -1,4 +1,4 @@
-/* eslint linebreak-style: ["error", "windows"] */
+/* eslint-disable linebreak-style */
 const { nanoid } = require('nanoid');
 const booksStore = require('./books');
 
