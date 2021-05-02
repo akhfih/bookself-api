@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+/* eslint linebreak-style: ["error", "windows"] */
 const { nanoid } = require('nanoid');
 const booksStore = require('./books');
 
@@ -78,8 +78,6 @@ const getAllBooksHandler = (request, h) => {
           id: book.id,
           name: book.name,
           publisher: book.publisher,
-          reading: book.reading,
-          finished: book.finished,
         })),
       },
     });
@@ -97,8 +95,6 @@ const getAllBooksHandler = (request, h) => {
           id: book.id,
           name: book.name,
           publisher: book.publisher,
-          reading: book.reading,
-          finished: book.finished,
         })),
       },
     });
@@ -116,8 +112,6 @@ const getAllBooksHandler = (request, h) => {
           id: book.id,
           name: book.name,
           publisher: book.publisher,
-          reading: book.reading,
-          finished: book.finished,
         })),
       },
     });
@@ -129,8 +123,6 @@ const getAllBooksHandler = (request, h) => {
     id: book.id,
     name: book.name,
     publisher: book.publisher,
-    reading: book.reading,
-    finished: book.finished,
   }));
 
   const response = h.response({
@@ -167,10 +159,8 @@ const getBooksIdHandler = (request, h) => {
 const editBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
   const {
-    // eslint-disable-next-line no-unused-vars
     name, year, author, summary, publisher, pageCount, readPage, reading,
   } = request.payload;
-  // eslint-disable-next-line no-unused-vars
   const updatedAt = new Date().toISOString();
 
   if (!name) {
